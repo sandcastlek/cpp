@@ -5,7 +5,7 @@ OBJS   := $(SRCS:.cpp=.o)
 all: $(MY_APP)
 
 $(MY_APP): $(OBJS)
-	g++ $^ -o $@
+	g++ $^ -o $@ -lpthread
 
 %.o: %.cpp
 	g++ -c $< -o $@
