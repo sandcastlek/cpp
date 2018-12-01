@@ -27,7 +27,8 @@ class Outer
 	public:
 		Outer(){
 			m_pAggre = new Aggregation;
-			std::cout << "Outer Ctor" << std::endl;
+			std::cout << "Outer Ctor Now throwing" << std::endl;
+			throw 1;
 		}
 		~Outer(){
 			std::cout << "Outer Dtor" << std::endl;
@@ -39,7 +40,13 @@ class Outer
 
 int main(int argc, char* argv[])
 {
-	Outer obj_Outer;
+	try{
+		Outer obj_Outer;
+	}
+	catch(...)
+	{
+		std::cout << "catched" << std::endl;
+	}
 	return 0;
 }
 
